@@ -5,7 +5,7 @@
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
+import Config
 
 config :expenses_api,
   ecto_repos: [ExpensesApi.Repo],
