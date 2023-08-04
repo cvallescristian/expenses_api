@@ -16,8 +16,7 @@ config :expenses_api, ExpensesApiWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "uvWnUhh4m3DKXOilylxIxvk8PJyIYugqAsVrx7wbBlZPBXJLqHUS/Is3fPkO9GrL",
   render_errors: [view: ExpensesApiWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: ExpensesApi.PubSub,
-  live_view: [signing_salt: "sI5xAd93"]
+  pubsub_server: ExpensesApi.PubSub
 
 # Configures Elixir's Logger
 config :logger, :console,

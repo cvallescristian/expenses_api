@@ -7,6 +7,8 @@ defmodule ExpensesApiWeb.Router do
 
   scope "/api", ExpensesApiWeb do
     pipe_through :api
+
+    resources "/users", UserController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development
@@ -17,11 +19,9 @@ defmodule ExpensesApiWeb.Router do
   # you can use Plug.BasicAuth to set up some basic authentication
   # as long as you are also using SSL (which you should anyway).
   if Mix.env() in [:dev, :test] do
-    import Phoenix.LiveDashboard.Router
 
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: ExpensesApiWeb.Telemetry
     end
   end
 end
