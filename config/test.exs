@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # Configure your database
 #
@@ -20,3 +20,6 @@ config :expenses_api, ExpensesApiWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Config Bcrypt
+# config :bcrypt_elixir, log_rounds: 4
