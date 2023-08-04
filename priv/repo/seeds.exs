@@ -9,3 +9,16 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias ExpensesApi.Repo
+alias ExpensesApi.Admin
+alias ExpensesApi.Admin.User
+
+# Delete all users
+User |> Repo.delete_all()
+
+# Create default user
+Admin.create_user(%{
+  name: "Cristian Valles Pereira",
+  email: "valles.cristian1992@gmail.com",
+  password: "6411621516",
+})

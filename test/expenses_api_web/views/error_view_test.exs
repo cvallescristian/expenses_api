@@ -12,4 +12,9 @@ defmodule ExpensesApiWeb.ErrorViewTest do
     assert render(ExpensesApiWeb.ErrorView, "500.json", []) ==
              %{errors: %{detail: "Internal Server Error"}}
   end
+
+  test "renders 422.json" do
+    assert render(ExpensesApiWeb.ErrorView, "422.json", []) ==
+             %{errors: %{detail: "Unprocessable Entity"}}
+  end
 end
