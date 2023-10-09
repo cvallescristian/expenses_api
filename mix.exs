@@ -42,6 +42,8 @@ defmodule ExpensesApi.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
+      # Manage .xlsx files
+      {:xlsxir, "~> 1.6.4"}
       # # User Authentication
       # {:bcrypt_elixir, "~> 3.0"}
     ]

@@ -1,0 +1,32 @@
+version: "3.9" # use the latest version
+services:
+  phoenix-app:
+    container_name: phoenix-container
+    restart: always
+
+    build: . # specify the path to the Dockerfile, in our case it is in the root of the project
+
+    environment:
+      - MIX_ENV=dev # set mix environment
+
+    # mount the necessary files that will respond to changes in the code. Required for hot reloading
+    volumes:
+      - ./assets:/app/assets
+      - ./priv:/app/priv
+      - ./lib:/app/lib
+      - ./config:/app/config
+    ports:
+      - "4000:4000"
+
+    # `tty: true` и `stdin_open: true` required to interactive shell. Otherwise, iex will throw an error
+    tty: true
+    stdin_open: true
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

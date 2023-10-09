@@ -2,10 +2,10 @@ import Config
 
 # Configure your database
 config :expenses_api, ExpensesApi.Repo,
-  username: "postgres",
-  password: "postgres",
+  hostname: System.get_env("DB_HOST", "db"),
+  username: System.get_env("DB_USERNAME", "postgres"),
+  password: System.get_env("DB_PASS", "postgres"),
   database: "expenses_api_dev",
-  hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
