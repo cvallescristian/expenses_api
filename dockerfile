@@ -9,6 +9,8 @@ RUN npm install --prefix ./assets
 RUN mix local.hex --force && mix local.rebar --force
 RUN mix do deps.get, compile
 
+RUN chmod +x ./run.sh
+
 EXPOSE 4000
 
 CMD ["./run.sh"]
