@@ -29,3 +29,5 @@ expenses_api-*.tar
 
 # Envirorment Variables
 .env
+
+postgres-data

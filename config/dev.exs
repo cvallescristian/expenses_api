@@ -2,7 +2,7 @@ import Config
 
 # Configure your database
 config :expenses_api, ExpensesApi.Repo,
-  hostname: System.get_env("DB_HOST", "localhost"),
+  hostname: System.get_env("DB_HOST", "db"),
   username: System.get_env("DB_USERNAME", "postgres"),
   password: System.get_env("DB_PASS", "postgres"),
   database: "expenses_api_dev",
